@@ -1,6 +1,8 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Tabs from "./components/shared/Tabs";
+import Search from "./pages/Search";
+import SearchPage from "./pages/Search";
 
 function App() {
   const isAuthenticated = () => true;
@@ -25,6 +27,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PrivateRoute element={<Home />} />} />
+        <Route
+          path="/search"
+          element={<PrivateRoute element={<SearchPage />} />}
+        />
       </Routes>
     </BrowserRouter>
   );

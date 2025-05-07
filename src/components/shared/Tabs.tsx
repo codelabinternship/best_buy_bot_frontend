@@ -11,7 +11,7 @@ function Tabs() {
     {
       id: 2,
       icon: Search,
-      navigation: "/",
+      navigation: "/search",
     },
     {
       id: 3,
