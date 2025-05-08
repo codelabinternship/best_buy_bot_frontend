@@ -121,3 +121,7 @@
 body {
   font-family: "Inter";
 }
+
+.rounded-t {
+  border-radius: 40px 40px 0px 0px;
+}
