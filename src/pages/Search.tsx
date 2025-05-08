@@ -74,14 +74,14 @@ export default function SearchPage() {
         </div>
       </div>
       <div className="flex p-4 gap-4">
-        <div className="w-60 bg-teal-300 rounded-lg p-4">
+        <div className="w-[100px] bg-teal-300 rounded-lg p-4">
           <ul className="space-y-2">
             {categories.map((category, index) => (
               <li
                 key={index}
                 className={cn(
-                  "p-2 rounded-md cursor-pointer hover:bg-teal-400 text-white",
-                  index === 0 && "bg-white text-teal-500 font-bold" // active category
+                  "p-2 rounded-md cursor-pointer text-[12px] hover:bg-teal-400 text-white",
+                  index === 0 && "bg-white text-teal-500 text-[12px] font-bold" // active category
                 )}
               >
                 {category}
@@ -100,7 +100,7 @@ export default function SearchPage() {
                 <img
                   src={product.img}
                   alt={product.title}
-                  className="w-[185px] h-[169px] object-cover"
+                  className="w-[195px] h-[100px] object-cover"
                 />
               </div>
               <div className="mt-2 text-sm font-medium text-center">
