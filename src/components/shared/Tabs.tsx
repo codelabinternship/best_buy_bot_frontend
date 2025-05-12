@@ -21,7 +21,7 @@ function Tabs() {
     {
       id: 4,
       icon: User,
-      navigation: "/",
+      navigation: "/profile",
     },
   ];
   return (

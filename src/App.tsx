@@ -3,6 +3,8 @@ import Home from "./pages/Home";
 import Tabs from "./components/shared/Tabs";
 import Search from "./pages/Search";
 import SearchPage from "./pages/Search";
+import Profile from "./pages/Profile";
+import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   const isAuthenticated = () => true;
@@ -30,6 +32,14 @@ function App() {
         <Route
           path="/search"
           element={<PrivateRoute element={<SearchPage />} />}
+        />
+        <Route
+          path="/profile"
+          element={<PrivateRoute element={<Profile />} />}
+        />
+        <Route
+          path="/checkout"
+          element={<PrivateRoute element={<CheckoutPage />} />}
         />
       </Routes>
     </BrowserRouter>
