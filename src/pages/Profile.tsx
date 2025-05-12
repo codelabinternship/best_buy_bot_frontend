@@ -172,8 +172,8 @@ export default function PersonalAccount() {
           </Card>
         </div>
         {/* Logout Button */}
-        <div className="p-4 mt-30">
-          <Button className="w-full bg-teal-400 hover:bg-teal-500">
+        <div className="p-4 mt-10 mb-10">
+          <Button className="w-full  bg-teal-400 hover:bg-teal-500">
             Выйти
           </Button>
         </div>
