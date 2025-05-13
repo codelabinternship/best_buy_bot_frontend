@@ -2,8 +2,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Home, Search, ShoppingCart, User } from "lucide-react";
+import { Route, useNavigate } from "react-router-dom";
 
 export default function PersonalAccount() {
+  const navigate = useNavigate()
+  const navigateToCommants = () => {
+    navigate("/commants/")
+  }
+
+
   return (
     <div className="flex flex-col bg-teal-400">
       {/* Header */}
@@ -144,8 +151,7 @@ export default function PersonalAccount() {
                     />
                   </defs>
                 </svg>
-
-                <span className="text-[13px]">Мои отзывы</span>
+                <button onClick={navigateToCommants} className="text-[13px]">Мои отзывы</button>
               </div>
             </div>
           </CardContent>
