@@ -1,8 +1,9 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Tabs from "./components/shared/Tabs";
-import Search from "./pages/Search";
 import SearchPage from "./pages/Search";
+import Korzina from "./pages/korzina";
+import Dostavka from "./pages/dostavka";
 
 function App() {
   const isAuthenticated = () => true;
@@ -30,6 +31,14 @@ function App() {
         <Route
           path="/search"
           element={<PrivateRoute element={<SearchPage />} />}
+        />
+        <Route
+          path="/korzina"
+          element={<PrivateRoute element={<Korzina/>} />}
+        />
+         <Route
+          path="/dostavka"
+          element={<PrivateRoute element={<Dostavka/>} />}
         />
       </Routes>
     </BrowserRouter>
