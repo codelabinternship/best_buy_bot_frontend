@@ -148,8 +148,6 @@ export default function CheckoutPage() {
           </Button>
         </div>
       </div>
-
-      {/* Success Modal */}
       <Dialog open={success} onOpenChange={closeModal}>
         <DialogContent className="text-center ">
           <DialogHeader>
