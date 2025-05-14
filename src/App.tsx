@@ -5,6 +5,7 @@ import Search from "./pages/Search";
 import SearchPage from "./pages/Search";
 import Profile from "./pages/Profile";
 import CheckoutPage from "./pages/CheckoutPage";
+import Commants from "./pages/commants";
 
 function App() {
   const isAuthenticated = () => true;
@@ -34,8 +35,12 @@ function App() {
           element={<PrivateRoute element={<SearchPage />} />}
         />
         <Route
-          path="/profile"
+          path="/profile/"
           element={<PrivateRoute element={<Profile />} />}
+        />
+        <Route
+          path="/commants/"
+          element={<PrivateRoute element={<Commants/>} />}
         />
         <Route
           path="/checkout"
