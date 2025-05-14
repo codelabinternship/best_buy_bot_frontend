@@ -5,11 +5,13 @@ import { Home, Search, ShoppingCart, User } from "lucide-react";
 import { Route, useNavigate } from "react-router-dom";
 
 export default function PersonalAccount() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const navigateToCommants = () => {
-    navigate("/commants/")
-  }
-
+    navigate("/comments");
+  };
+  const navigateToLiked = () => {
+    navigate("/liked-products");
+  };
 
   return (
     <div className="flex flex-col bg-teal-400">
@@ -33,7 +35,10 @@ export default function PersonalAccount() {
           <CardContent className="flex flex-col items-center py-3">
             {/* Quick Actions */}
             <div className="grid grid-cols-4 gap-1 ">
-              <div className="flex cursor-pointer flex-col hover:text-gray-600  items-center text-sm">
+              <div
+                onClick={navigateToLiked}
+                className="flex cursor-pointer flex-col hover:text-gray-600  items-center text-sm"
+              >
                 <svg
                   width="20"
                   height="20"
@@ -64,7 +69,6 @@ export default function PersonalAccount() {
                     />
                   </defs>
                 </svg>
-
                 <span className="text-[13px]">Мне нравится</span>
               </div>
               <div className="flex cursor-pointer hover:text-gray-600  flex-col items-center text-sm">
@@ -120,7 +124,10 @@ export default function PersonalAccount() {
 
                 <span className="text-[13px]">Мои заказы</span>
               </div>
-              <div className="flex cursor-pointer flex-col hover:text-gray-600  items-center text-sm">
+              <div
+                onClick={navigateToCommants}
+                className="flex cursor-pointer flex-col hover:text-gray-600  items-center text-sm"
+              >
                 <svg
                   width="20"
                   height="20"
@@ -151,7 +158,9 @@ export default function PersonalAccount() {
                     />
                   </defs>
                 </svg>
-                <button onClick={navigateToCommants} className="text-[13px]">Мои отзывы</button>
+                <button onClick={navigateToCommants} className="text-[13px]">
+                  Мои отзывы
+                </button>
               </div>
             </div>
           </CardContent>

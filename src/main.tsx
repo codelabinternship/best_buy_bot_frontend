@@ -4,11 +4,14 @@ import App from "./App.tsx";
 import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "./app/store.ts";
+import { LikedProvider } from "./context/LikedContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
-      <App />
+      <LikedProvider>
+        <App />
+      </LikedProvider>
     </Provider>
   </StrictMode>
 );
