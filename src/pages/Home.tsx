@@ -51,8 +51,6 @@ function Home() {
       otziv: 180,
     },
   ];
-
-  const navigate = useNavigate();
   return (
     <>
       <p className="text-[#4FC9AF] mt-7 font-extrabold text-3xl text-center ">
