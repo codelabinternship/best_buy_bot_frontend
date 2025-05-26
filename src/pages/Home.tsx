@@ -62,21 +62,21 @@ function Home() {
       <p className="text-[#4FC9AF] mt-7 font-extrabold text-3xl text-center ">
         Best Buy
       </p>
-      <div className="mb-5">
-        <div className="flex px-">
-          <div className="relative w-full ">
-            <Search
-              // onClick={() => navigate("/")}
-              className="absolute w-8 cursor-pointer hover:text-[#eae8e8] transition-all h-8 left-2 top-[4px] text-white "
-            />
-            <input
-              onChange={(e) => setInput(e.target.value)}
-              type="text"
-              className="bg-[#B4DAD2] transition-all hover:bg-[#a6cdc5] pl-11 text-white rounded-full h-10 w-full"
-            />
-          </div>
+      <div className="mb-5 flex">
+        <div className="relative w-full">
+          {/* Search Icon */}
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white w-5 h-5 cursor-pointer transition-colors duration-200 hover:text-gray-200" />
+
+          {/* Input Field */}
+          <input
+            onChange={(e) => setInput(e.target.value)}
+            type="text"
+            placeholder="Поиск..."
+            className="w-full h-12 pl-10 pr-4 rounded-full bg-[#B4DAD2] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white/70 transition-all duration-300 hover:bg-[#a6cdc5]"
+          />
         </div>
       </div>
+
       <Carousel
         opts={{
           align: "start",

@@ -44,19 +44,20 @@ export default function SearchPage() {
 
   return (
     <>
-      <div className="mb-5 mt-2">
-        <div className="relative w-full mt-4">
-          <Search
-            // onClick={() => navigate("/")}
-            className="absolute w-8 cursor-pointer hover:text-[#eae8e8] transition-all h-8 left-2 top-[4px] text-white "
-          />
+      <div className="mb-5 flex mt-4">
+        <div className="relative w-full">
+          {/* Search Icon */}
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white w-5 h-5 cursor-pointer transition-colors duration-200 hover:text-gray-200" />
+
+          {/* Input Field */}
           <input
-            // onChange={(e) => setInput(e.target.value)}
             type="text"
-            className="bg-[#B4DAD2] transition-all hover:bg-[#a6cdc5] pl-11 text-white rounded-full h-10 w-full"
+            placeholder="Поиск..."
+            className="w-full h-12 pl-10 pr-4 rounded-full bg-[#B4DAD2] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white/70 transition-all duration-300 hover:bg-[#a6cdc5]"
           />
         </div>
       </div>
+
       <div className="flex gap-4">
         <div className="w-[150px] bg-[#4FC9AF] rounded-r-lg p-4">
           <ul className="flex flex-col gap-2">

@@ -8,6 +8,7 @@ import Commants from "./pages/commants";
 import ProductsSlug from "./pages/ProductsSlug";
 import LikedPage from "./pages/LikedPage";
 import SearchCategory from "./pages/SearchCategory";
+import OrderSummary from "./pages/OrderSummary";
 
 function App() {
   const isAuthenticated = () => true;
@@ -59,6 +60,10 @@ function App() {
         <Route
           path="/liked-products"
           element={<PrivateRoute element={<LikedPage />} />}
+        />
+        <Route
+          path="/my-orders"
+          element={<PrivateRoute element={<OrderSummary />} />}
         />
       </Routes>
     </BrowserRouter>

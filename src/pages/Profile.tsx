@@ -9,6 +9,9 @@ export default function PersonalAccount() {
   const navigateToCommants = () => {
     navigate("/comments");
   };
+  const navigateToOrders = () => {
+    navigate("/my-orders");
+  };
   const navigateToLiked = () => {
     navigate("/liked-products");
   };
@@ -90,7 +93,10 @@ export default function PersonalAccount() {
 
                 <span className="text-[13px]">Доставка</span>
               </div>
-              <div className="flex cursor-pointer flex-col hover:text-gray-600  items-center text-sm">
+              <div
+                onClick={navigateToOrders}
+                className="flex cursor-pointer flex-col hover:text-gray-600  items-center text-sm"
+              >
                 <svg
                   width="20"
                   height="20"
@@ -187,8 +193,8 @@ export default function PersonalAccount() {
           </Card>
         </div>
         {/* Logout Button */}
-        <div className="absolute right-[50%]">
-          <Button className="w-[300px] left-[50%] right-[50%]  transition-all   bg-teal-400 hover:bg-teal-500">
+        <div className="absolute max-w-[390px] w-full bottom-[-40px] left-1/2 transform -translate-x-1/2">
+          <Button className="w-full bg-teal-400 hover:bg-teal-500 transition-all">
             Выйти
           </Button>
         </div>
