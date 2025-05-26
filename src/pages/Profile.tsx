@@ -12,6 +12,9 @@ export default function PersonalAccount() {
   const navigateToOrders = () => {
     navigate("/my-orders");
   };
+  const navigateToChekout = () => {
+    navigate("/checkout");
+  };
   const navigateToLiked = () => {
     navigate("/liked-products");
   };
@@ -74,7 +77,10 @@ export default function PersonalAccount() {
                 </svg>
                 <span className="text-[13px]">Мне нравится</span>
               </div>
-              <div className="flex cursor-pointer hover:text-gray-600  flex-col items-center text-sm">
+              <div
+                onClick={navigateToChekout}
+                className="flex cursor-pointer hover:text-gray-600  flex-col items-center text-sm"
+              >
                 <svg
                   width="20"
                   height="20"

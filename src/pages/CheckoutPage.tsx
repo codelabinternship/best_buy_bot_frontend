@@ -54,7 +54,7 @@ export default function CheckoutPage() {
         {/* Product details */}
         <div className="flex items-center gap-4">
           <img
-            src="/shoe.jpg"
+            src="/nike.webp"
             alt="Nike Shoes"
             className="w-24 h-24 rounded-xl object-cover"
           />
