@@ -9,6 +9,7 @@ import ProductsSlug from "./pages/ProductsSlug";
 import LikedPage from "./pages/LikedPage";
 import SearchCategory from "./pages/SearchCategory";
 import OrderSummary from "./pages/OrderSummary";
+import CartPage from "./pages/Cart";
 
 function App() {
   const isAuthenticated = () => true;
@@ -37,6 +38,7 @@ function App() {
           path="/search"
           element={<PrivateRoute element={<SearchPage />} />}
         />
+        <Route path="/cart" element={<PrivateRoute element={<CartPage />} />} />
         <Route
           path="/category/:id"
           element={<PrivateRoute element={<SearchCategory />} />}

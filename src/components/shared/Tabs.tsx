@@ -16,7 +16,7 @@ function Tabs() {
     {
       id: 3,
       icon: ShoppingCart,
-      navigation: "/",
+      navigation: "/cart",
     },
     {
       id: 4,
