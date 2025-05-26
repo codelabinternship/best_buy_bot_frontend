@@ -21,9 +21,8 @@ function Home() {
     {
       id: 1,
       title: "Женский пиджак",
-      category: "Женская одежда",
-      image:
-        "https://avatars.mds.yandex.net/i?id=3db7320caae64c08ee5cf75d1c356d4ca788b621-5452895-images-thumbs&n=13",
+      category: "JenskiyOdejda",
+      image: "/JenskiyFinka.png",
       price: 1200000,
       stars: 5.0,
       otziv: 180,
@@ -31,9 +30,8 @@ function Home() {
     {
       id: 2,
       title: "Женский пиджак",
-      category: "Женская одежда",
-      image:
-        "https://avatars.mds.yandex.net/i?id=3db7320caae64c08ee5cf75d1c356d4ca788b621-5452895-images-thumbs&n=13",
+      category: "JenskiyOdejda",
+      image: "/kofta.png",
       price: 1200000,
       stars: 5.0,
       otziv: 180,
@@ -41,9 +39,8 @@ function Home() {
     {
       id: 3,
       title: "Женский пиджак",
-      category: "Женская одежда",
-      image:
-        "https://avatars.mds.yandex.net/i?id=3db7320caae64c08ee5cf75d1c356d4ca788b621-5452895-images-thumbs&n=13",
+      category: "JenskiyOdejda",
+      image: "QoraKiyim.png",
       price: 1200000,
       stars: 5.0,
       otziv: 180,
@@ -51,9 +48,8 @@ function Home() {
     {
       id: 4,
       title: "Женский пиджак",
-      category: "Женская одежда",
-      image:
-        "https://avatars.mds.yandex.net/i?id=3db7320caae64c08ee5cf75d1c356d4ca788b621-5452895-images-thumbs&n=13",
+      category: "JenskiyOdejda",
+      image: "/jenskiy.webp",
       price: 1200000,
       stars: 5.0,
       otziv: 180,

@@ -22,57 +22,15 @@ const categories = [
 
 const products = [
   {
-    title: "Женские кроссовки",
-    img: "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg",
-    // category: "Женская одежда",
+    title: "Женская одежда",
+    img: "/JenskiyFinka.png",
     path: "JenskiyOdejda",
   },
   {
-    title: "Мужской пиджак",
-    img: "https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg",
-    // category: "Мужская одежда",
+    title: "Мужская одежда",
+    img: "/i.webp",
     path: "MujskoyOdejda",
   },
-  // {
-  //   title: "Женские шорты",
-  //   img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg",
-  //   category: "Женская одежда",
-  // },
-  // {
-  //   title: "Женская сумка",
-  //   img: "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg",
-  //   category: "Аксессуары",
-  // },
-  // {
-  //   title: "Женская блузка",
-  //   img: "https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg",
-  //   category: "Женская одежда",
-  // },
-  // {
-  //   title: "Туфли на шпильках",
-  //   img: "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg",
-  //   category: "Аксессуары",
-  // },
-  // {
-  //   title: "Женский пиджак",
-  //   img: "https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg",
-  //   category: "Женская одежда",
-  // },
-  // {
-  //   title: "Женская юбка",
-  //   img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg",
-  //   category: "Женская одежда",
-  // },
-  // {
-  //   title: "Наушники AirPods",
-  //   img: "https://images.pexels.com/photos/373945/pexels-photo-373945.jpeg",
-  //   category: "Аксессуары",
-  // },
-  // {
-  //   title: "Мужская кепка",
-  //   img: "https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg",
-  //   category: "Мужская одежда",
-  //},
 ];
 
 export default function SearchPage() {
@@ -87,7 +45,7 @@ export default function SearchPage() {
   return (
     <>
       <div className="mb-5 mt-2">
-        <div className="relative w-full ">
+        <div className="relative w-full mt-4">
           <Search
             // onClick={() => navigate("/")}
             className="absolute w-8 cursor-pointer hover:text-[#eae8e8] transition-all h-8 left-2 top-[4px] text-white "

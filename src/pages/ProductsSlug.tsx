@@ -9,8 +9,8 @@ function ProductsSlug() {
     {
       id: 1,
       title: "Женский пиджак",
-      image:
-        "https://avatars.mds.yandex.net/i?id=3db7320caae64c08ee5cf75d1c356d4ca788b621-5452895-images-thumbs&n=13",
+      category: "Женская одежда",
+      image: "/JenskiyFinka.png",
       price: 1200000,
       stars: 5.0,
       otziv: 180,
@@ -18,8 +18,8 @@ function ProductsSlug() {
     {
       id: 2,
       title: "Женский пиджак",
-      image:
-        "https://avatars.mds.yandex.net/i?id=3db7320caae64c08ee5cf75d1c356d4ca788b621-5452895-images-thumbs&n=13",
+      category: "Женская одежда",
+      image: "/kofta.png",
       price: 1200000,
       stars: 5.0,
       otziv: 180,
@@ -27,8 +27,8 @@ function ProductsSlug() {
     {
       id: 3,
       title: "Женский пиджак",
-      image:
-        "https://avatars.mds.yandex.net/i?id=3db7320caae64c08ee5cf75d1c356d4ca788b621-5452895-images-thumbs&n=13",
+      category: "Женская одежда",
+      image: "/QoraKiyim.png",
       price: 1200000,
       stars: 5.0,
       otziv: 180,
@@ -36,8 +36,8 @@ function ProductsSlug() {
     {
       id: 4,
       title: "Женский пиджак",
-      image:
-        "https://avatars.mds.yandex.net/i?id=3db7320caae64c08ee5cf75d1c356d4ca788b621-5452895-images-thumbs&n=13",
+      category: "Женская одежда",
+      image: "/jenskiy.webp",
       price: 1200000,
       stars: 5.0,
       otziv: 180,
@@ -68,8 +68,8 @@ function ProductsSlug() {
           <CardContent className="p-4">
             <img
               src={data[0].image}
-              alt="Sony Headphones"
-              className="w-full h-auto object-contain mb-4"
+              alt={data[0].title}
+              className="w-full h-[300px] object-contain mb-4"
             />
             <h2 className="text-lg font-semibold">{data[0].title}</h2>
             <p className="mt-2 font-medium">Цвет:</p>
@@ -113,7 +113,6 @@ function ProductsSlug() {
                 }`}
               />
             </Button>
-            ;
           </div>
         </div>
       </div>
