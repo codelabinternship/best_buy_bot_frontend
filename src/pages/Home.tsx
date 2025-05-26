@@ -9,7 +9,7 @@ import Img1 from "../assets/caruselimages/carousel1.png";
 import Img2 from "../assets/caruselimages/carousel2.png";
 import Img3 from "../assets/caruselimages/carousel3.png";
 import ProductCard from "@/components/shared/Cards/ProductsCard";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Home() {
   const images = [Img1, Img2, Img3];
