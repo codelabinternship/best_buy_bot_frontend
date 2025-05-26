@@ -1,21 +1,17 @@
-import { Camera, Search } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Search } from "lucide-react";
+
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import Img1 from "../assets/caruselimages/carousel1.png";
 import Img2 from "../assets/caruselimages/carousel2.png";
 import Img3 from "../assets/caruselimages/carousel3.png";
 import ProductCard from "@/components/shared/Cards/ProductsCard";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 function Home() {
-  const [input, setInput] = useState("");
   const images = [Img1, Img2, Img3];
   const productData = [
     {
@@ -69,7 +65,6 @@ function Home() {
 
           {/* Input Field */}
           <input
-            onChange={(e) => setInput(e.target.value)}
             type="text"
             placeholder="Поиск..."
             className="w-full h-12 pl-10 pr-4 rounded-full bg-[#B4DAD2] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white/70 transition-all duration-300 hover:bg-[#a6cdc5]"

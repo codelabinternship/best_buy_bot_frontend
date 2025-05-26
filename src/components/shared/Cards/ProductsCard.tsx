@@ -1,5 +1,4 @@
 import { Star } from "lucide-react";
-import i from '../../../assets/i.png'
 type ProductCardd = {
   title: string;
   image: string;

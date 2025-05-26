@@ -1,6 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Rating from "@/components/ui/rating";
-import { Apple, Flame, Heart } from "lucide-react";
 
 function Commants() {
   return (

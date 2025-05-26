@@ -46,7 +46,7 @@ function ProductsSlug() {
   const location = useLocation();
   let id = location.pathname.split("/")[2];
 
-  let data = productData.filter((i, index) => i.id == Number(id));
+  let data = productData.filter((i) => i.id == Number(id));
   console.log(data);
   const { toggleLike, likedProducts } = useLiked();
   const isLiked = likedProducts.some((p) => p.id === data[0].id); //
