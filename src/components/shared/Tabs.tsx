@@ -20,11 +20,6 @@ function Tabs() {
     },
     {
       id: 4,
-      icon: Car,
-      navigation: "/dostavka",
-    },
-    {
-      id: 5,
       icon: User,
       navigation: "/",
     },

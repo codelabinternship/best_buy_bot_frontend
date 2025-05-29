@@ -4,6 +4,7 @@ import Tabs from "./components/shared/Tabs";
 import SearchPage from "./pages/Search";
 import Korzina from "./pages/korzina";
 import Dostavka from "./pages/dostavka";
+import { User } from "lucide-react";
 
 function App() {
   const isAuthenticated = () => true;
@@ -37,8 +38,8 @@ function App() {
           element={<PrivateRoute element={<Korzina/>} />}
         />
          <Route
-          path="/dostavka"
-          element={<PrivateRoute element={<Dostavka/>} />}
+          path="/user"
+          element={<PrivateRoute element={<User/>} />}
         />
       </Routes>
     </BrowserRouter>
