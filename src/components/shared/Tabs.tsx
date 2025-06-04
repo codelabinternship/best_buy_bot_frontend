@@ -1,4 +1,4 @@
-import { House, Search, ShoppingCart, User } from "lucide-react";
+import { Car, House, Search, ShoppingCart, User } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function Tabs() {
@@ -16,6 +16,7 @@ function Tabs() {
     {
       id: 3,
       icon: ShoppingCart,
+
       navigation: "/cart",
     },
     {

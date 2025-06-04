@@ -2,6 +2,9 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Tabs from "./components/shared/Tabs";
 import SearchPage from "./pages/Search";
+
+import Korzina from "./pages/korzina";
+import { User } from "lucide-react";
 import Profile from "./pages/Profile";
 import CheckoutPage from "./pages/CheckoutPage";
 import Commants from "./pages/commants";
@@ -10,6 +13,7 @@ import LikedPage from "./pages/LikedPage";
 import SearchCategory from "./pages/SearchCategory";
 import OrderSummary from "./pages/OrderSummary";
 import CartPage from "./pages/Cart";
+
 
 function App() {
   const isAuthenticated = () => true;
@@ -38,6 +42,15 @@ function App() {
           path="/search"
           element={<PrivateRoute element={<SearchPage />} />}
         />
+
+        <Route
+          path="/korzina"
+          element={<PrivateRoute element={<Korzina/>} />}
+        />
+         <Route
+          path="/user"
+          element={<PrivateRoute element={<User/>} />}
+
         <Route path="/cart" element={<PrivateRoute element={<CartPage />} />} />
         <Route
           path="/category/:id"
@@ -66,6 +79,7 @@ function App() {
         <Route
           path="/my-orders"
           element={<PrivateRoute element={<OrderSummary />} />}
+
         />
       </Routes>
     </BrowserRouter>
