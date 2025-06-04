@@ -1,5 +1,4 @@
 import { Search } from "lucide-react";
-
 import {
   Carousel,
   CarouselContent,
@@ -10,58 +9,21 @@ import Img2 from "../assets/caruselimages/carousel2.png";
 import Img3 from "../assets/caruselimages/carousel3.png";
 import ProductCard from "@/components/shared/Cards/ProductsCard";
 import { Link } from "react-router-dom";
+import { useProducts } from "@/hooks/useProducts";
 
 function Home() {
   const images = [Img1, Img2, Img3];
-  const productData = [
-    {
-      id: 1,
-      title: "Женский пиджак",
-      category: "JenskiyOdejda",
-      image: "/JenskiyFinka.png",
-      price: 1200000,
-      stars: 5.0,
-      otziv: 180,
-    },
-    {
-      id: 2,
-      title: "Женский пиджак",
-      category: "JenskiyOdejda",
-      image: "/kofta.png",
-      price: 1200000,
-      stars: 5.0,
-      otziv: 180,
-    },
-    {
-      id: 3,
-      title: "Женский пиджак",
-      category: "JenskiyOdejda",
-      image: "QoraKiyim.png",
-      price: 1200000,
-      stars: 5.0,
-      otziv: 180,
-    },
-    {
-      id: 4,
-      title: "Женский пиджак",
-      category: "JenskiyOdejda",
-      image: "/jenskiy.webp",
-      price: 1200000,
-      stars: 5.0,
-      otziv: 180,
-    },
-  ];
+  const { data: productData, isLoading, isError } = useProducts();
+
   return (
     <>
-      <p className="text-[#4FC9AF] mt-7 font-extrabold text-3xl text-center ">
+      <p className="text-[#4FC9AF] mt-7 font-extrabold text-3xl text-center">
         Best Buy
       </p>
+
       <div className="mb-5 flex">
         <div className="relative w-full">
-          {/* Search Icon */}
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white w-5 h-5 cursor-pointer transition-colors duration-200 hover:text-gray-200" />
-
-          {/* Input Field */}
           <input
             type="text"
             placeholder="Поиск..."
@@ -70,39 +32,47 @@ function Home() {
         </div>
       </div>
 
-      <Carousel
-        opts={{
-          align: "start",
-        }}
-        className="w-full "
-      >
+      <Carousel opts={{ align: "start" }} className="w-full">
         <CarouselContent>
           {images.map((i, index) => (
             <CarouselItem key={index} className="text-center">
               <img
                 className="w-[350px] h-[200px] object-cover rounded-2xl"
                 src={i}
-                alt=""
+                alt={`carousel-${index}`}
               />
             </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel>
-      <div className="grid grid-cols-2 gap-10">
-        {productData.map((item) => {
-          return (
-            <Link to={`/products/${item.id}`}>
+
+      <div className="grid grid-cols-2 gap-10 mt-6 ">
+        {isLoading && (
+          <div className="flex items-baseline justify-center gap-5">
+            <div className="loader">
+              <div className="loader__bar"></div>
+              <div className="loader__bar"></div>
+              <div className="loader__bar"></div>
+              <div className="loader__bar"></div>
+              <div className="loader__bar"></div>
+              <div className="loader__ball"></div>
+            </div>
+            <p className="text-2xl">Loading products...</p>
+          </div>
+        )}
+        {isError && <p>Произошла ошибка при загрузке товаров.</p>}
+        {productData &&
+          productData.map((item) => (
+            <Link key={item.id} to={`/products/${item.id}`}>
               <ProductCard
-                key={item.id}
-                title={item.title}
+                title={item.name}
                 image={item.image}
                 price={item.price}
                 stars={item.stars}
                 otziv={item.otziv}
               />
             </Link>
-          );
-        })}
+          ))}
       </div>
     </>
   );

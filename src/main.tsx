@@ -5,13 +5,16 @@ import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "./app/store.ts";
 import { LikedProvider } from "./context/LikedContext.tsx";
+import { QueryProvider } from "./components/providers/query-provider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Provider store={store}>
-      <LikedProvider>
-        <App />
-      </LikedProvider>
-    </Provider>
+    <QueryProvider>
+      <Provider store={store}>
+        <LikedProvider>
+          <App />
+        </LikedProvider>
+      </Provider>
+    </QueryProvider>
   </StrictMode>
 );
