@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+
 type ProductCardd = {
   title: string;
   image: string;
