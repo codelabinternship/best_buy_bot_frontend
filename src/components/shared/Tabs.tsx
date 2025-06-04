@@ -25,9 +25,10 @@ function Tabs() {
       navigation: "/profile",
     },
   ];
+  const isIOS = window.navigator.platform === "iPhone"
   return (
     <>
-      <div className="flex justify-between px-10 border bg-[#4FC9AF] py-[10px] absolute bottom-0 fixed max-w-[422px] w-full">
+      <div className={`flex justify-between px-10 border bg-[#4FC9AF] py-[10px]   ${isIOS ? "bottom-2" : "bottom-0"}  fixed max-w-[422px] w-full`}>
         {tabs.map((item) => {
           return (
             <div className="">

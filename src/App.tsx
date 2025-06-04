@@ -2,7 +2,6 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Tabs from "./components/shared/Tabs";
 import SearchPage from "./pages/Search";
-
 import Korzina from "./pages/korzina";
 import { User } from "lucide-react";
 import Profile from "./pages/Profile";
@@ -20,9 +19,11 @@ function App() {
   function Layout({ children }: any) {
     return (
       <>
-        <div className="max-w-[422px] h-[625px] mx-auto relative">
-          {children}
-          <Tabs />
+        <div className="max-w-[422px] h-[625px] mx-auto ">
+          <div className="!mb-50">
+           {children}
+          </div>
+           <Tabs  /> 
         </div>
       </>
     );
@@ -50,7 +51,7 @@ function App() {
          <Route
           path="/user"
           element={<PrivateRoute element={<User/>} />}
-
+/>
         <Route path="/cart" element={<PrivateRoute element={<CartPage />} />} />
         <Route
           path="/category/:id"

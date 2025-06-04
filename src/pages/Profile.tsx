@@ -74,7 +74,7 @@ export default function PersonalAccount() {
                     />
                   </defs>
                 </svg>
-                <span className="text-[13px]">Мне нравится</span>
+                <span className="text-[13px]">нравится</span>
               </div>
               <div
                 onClick={navigateToChekout}
