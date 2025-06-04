@@ -16,12 +16,13 @@ function Tabs() {
     {
       id: 3,
       icon: ShoppingCart,
-      navigation: "/korzina",
+
+      navigation: "/cart",
     },
     {
       id: 4,
       icon: User,
-      navigation: "/",
+      navigation: "/profile",
     },
   ];
   return (

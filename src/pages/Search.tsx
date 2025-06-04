@@ -1,7 +1,10 @@
-import { cn } from "@/lib/utils"; // Shadcn utility function
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 import { Search } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
+  "Все",
   "Женская одежда",
   "Аксессуары",
   "Красота и уход",
@@ -18,70 +21,53 @@ const categories = [
 
 const products = [
   {
-    title: "Женские кроссовки",
-    img: "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg",
+    title: "Женская одежда",
+    img: "/JenskiyFinka.png",
+    path: "JenskiyOdejda",
   },
   {
-    title: "Мужской пиджак",
-    img: "https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg",
-  },
-  {
-    title: "Женские шорты",
-    img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg",
-  },
-  {
-    title: "Женская сумка",
-    img: "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg",
-  },
-  {
-    title: "Женская блузка",
-    img: "https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg",
-  },
-  {
-    title: "Туфли на шпильках",
-    img: "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg",
-  },
-  {
-    title: "Женский пиджак",
-    img: "https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg",
-  },
-  {
-    title: "Женская юбка",
-    img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg",
-  },
-  {
-    title: "Наушники AirPods",
-    img: "https://images.pexels.com/photos/373945/pexels-photo-373945.jpeg",
-  },
-  {
-    title: "Мужская кепка",
-    img: "https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg",
+    title: "Мужская одежда",
+    img: "/i.webp",
+    path: "MujskoyOdejda",
   },
 ];
 
 export default function SearchPage() {
+  const [activeCategory, setActiveCategory] = useState<string>("Все");
+  const navigate = useNavigate();
+
+  const filteredProducts =
+    activeCategory === "Все"
+      ? products
+      : products.filter((product) => product.path === activeCategory);
+
   return (
     <>
-      <div className="mb-5">
-        <div className="flex px-">
-          <div className="relative w-full ">
-            <Search className="absolute w-8 h-8 left-2 top-[4px] text-white " />
-            <input
-              type="text"
-              className="bg-[#B4DAD2] rounded-full h-10 w-full"
-            />
-          </div>
+      <div className="mb-5 flex mt-4">
+        <div className="relative w-full">
+          {/* Search Icon */}
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white w-5 h-5 cursor-pointer transition-colors duration-200 hover:text-gray-200" />
+
+          {/* Input Field */}
+          <input
+            type="text"
+            placeholder="Поиск..."
+            className="w-full h-12 pl-10 pr-4 rounded-full bg-[#B4DAD2] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white/70 transition-all duration-300 hover:bg-[#a6cdc5]"
+          />
         </div>
       </div>
-      <div className="flex p-4 gap-4">
-        <div className="w-[100px] bg-teal-300 rounded-lg p-4">
-          <ul className="space-y-2">
+
+      <div className="flex gap-4">
+        <div className="w-[150px] bg-[#4FC9AF] rounded-r-lg p-4">
+          <ul className="flex flex-col gap-2">
             {categories.map((category, index) => (
               <li
                 key={index}
+                onClick={() => setActiveCategory(category)}
                 className={cn(
                   "p-2 rounded-md cursor-pointer text-[12px] hover:bg-teal-400 text-white",
-                  index === 0 && "bg-white text-teal-500 text-[12px] font-bold" // active category
+                  activeCategory === category &&
+                    "bg-white text-teal-500 font-bold"
                 )}
               >
                 {category}
@@ -89,25 +75,29 @@ export default function SearchPage() {
             ))}
           </ul>
         </div>
-
         <div className="grid grid-cols-2 gap-4">
-          {products.map((product, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center p-2 bg-white rounded-lg shadow hover:shadow-md transition"
-            >
-              <div className="border-2 border-blue-400 rounded-lg p-1">
-                <img
-                  src={product.img}
-                  alt={product.title}
-                  className="w-[195px] h-[100px] object-cover"
-                />
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product, index) => (
+              <div
+                key={index}
+                onClick={() => navigate(`/category/${product.path}`)}
+                className="flex h-[180px] flex-col items-center p-2 bg-white rounded-lg shadow hover:shadow-md transition cursor-pointer"
+              >
+                <div className="border-2 border-blue-400 rounded-lg p-1">
+                  <img
+                    src={product.img}
+                    alt={product.title}
+                    className="w-[195px] h-[100px] object-cover"
+                  />
+                </div>
+                <div className="mt-2 text-sm font-medium text-center">
+                  {product.title}
+                </div>
               </div>
-              <div className="mt-2 text-sm font-medium text-center">
-                {product.title}
-              </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <div className="text-gray-500">Нет товаров в этой категории</div>
+          )}
         </div>
       </div>
     </>
