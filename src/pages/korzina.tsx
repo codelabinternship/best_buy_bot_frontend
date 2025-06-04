@@ -22,7 +22,7 @@ function Counter() {
 
 function Korzina() {
     return <header className="bg-[#4FC9AF] h-[960px] w-[422px]">
-        <div className="text-white font-medium text-4xl flex justify-center p-[28px]">Корзина</div>
+        <div className="text-white font-medium text-4xl flex justify-center]">Корзина</div>
         <div className="h-[960px] border-2 bg-white shadow-2xl rounded-2xl">
             <div className="flex gap-2 justify-end mt-8 items-center mr-2">
                 <button className="">Выбрать все</button>
