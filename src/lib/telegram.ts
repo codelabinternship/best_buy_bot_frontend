@@ -22,7 +22,7 @@ export function getTelegramUser() {
   return {
     telegram_id: user.id,
     username: user.username || "",
-    first_name: user.first_name || "",
+    first_name: user.first_name || "Ibrohim",
     last_name: user.last_name || "",
   };
 }
