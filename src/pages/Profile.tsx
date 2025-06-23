@@ -32,7 +32,7 @@ export default function PersonalAccount() {
             <AvatarFallback className="bg-teal-600">U</AvatarFallback>
           </Avatar>
           <div className="flex flex-col items-baseline">
-            <div className="text-lg font-semibold">Без имени</div>
+            <div className="text-lg font-semibold">{user?.first_name}</div>
             <div className="text-sm text-gray-500">+998 77 001 66 66</div>
           </div>
         </div>
