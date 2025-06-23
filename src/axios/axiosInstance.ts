@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://your-backend-domain.com", // Change to your API base
+  baseURL: "https://127.0.0.1:8000",
 });
 
 axiosInstance.interceptors.request.use((config) => {
