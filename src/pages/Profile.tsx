@@ -2,12 +2,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useNavigate } from "react-router-dom";
+import { useTelegramRegister } from "@/hooks/useTelegramRegister";
 
 export default function PersonalAccount() {
   const navigate = useNavigate();
   const navigateToCommants = () => {
     navigate("/comments");
   };
+  const user = useTelegramRegister();
+  console.log(user);
+
   const navigateToOrders = () => {
     navigate("/my-orders");
   };

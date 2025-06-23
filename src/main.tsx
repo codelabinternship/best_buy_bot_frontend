@@ -6,15 +6,19 @@ import { Provider } from "react-redux";
 import { store } from "./app/store.ts";
 import { LikedProvider } from "./context/LikedContext.tsx";
 import { QueryProvider } from "./components/providers/query-provider.tsx";
+import { QueryClient, QueryClientProvider } from "react-query";
+const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <QueryProvider>
-      <Provider store={store}>
-        <LikedProvider>
-          <App />
-        </LikedProvider>
-      </Provider>
-    </QueryProvider>
+    <QueryClientProvider client={queryClient}>
+      <QueryProvider>
+        <Provider store={store}>
+          <LikedProvider>
+            <App />
+          </LikedProvider>
+        </Provider>
+      </QueryProvider>
+    </QueryClientProvider>
   </StrictMode>
 );

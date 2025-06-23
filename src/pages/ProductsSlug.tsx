@@ -71,7 +71,7 @@ function ProductsSlug() {
             onClick={() =>
               toggleLike({
                 ...product,
-                title: product.name // Map 'name' to 'title' for compatibility
+                title: product.name, // Map 'name' to 'title' for compatibility
               })
             }
           >

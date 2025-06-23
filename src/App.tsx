@@ -13,17 +13,14 @@ import SearchCategory from "./pages/SearchCategory";
 import OrderSummary from "./pages/OrderSummary";
 import CartPage from "./pages/Cart";
 
-
 function App() {
   const isAuthenticated = () => true;
   function Layout({ children }: any) {
     return (
       <>
         <div className="max-w-[422px] h-[625px] mx-auto ">
-          <div className="!mb-50">
-           {children}
-          </div>
-           <Tabs  /> 
+          <div className="!mb-50">{children}</div>
+          <Tabs />
         </div>
       </>
     );
@@ -39,19 +36,17 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PrivateRoute element={<Home />} />} />
+        {/* <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} /> */}
         <Route
           path="/search"
           element={<PrivateRoute element={<SearchPage />} />}
         />
-
         <Route
           path="/korzina"
-          element={<PrivateRoute element={<Korzina/>} />}
+          element={<PrivateRoute element={<Korzina />} />}
         />
-         <Route
-          path="/user"
-          element={<PrivateRoute element={<User/>} />}
-/>
+        <Route path="/user" element={<PrivateRoute element={<User />} />} />
         <Route path="/cart" element={<PrivateRoute element={<CartPage />} />} />
         <Route
           path="/category/:id"
@@ -80,7 +75,10 @@ function App() {
         <Route
           path="/my-orders"
           element={<PrivateRoute element={<OrderSummary />} />}
-
+        />
+        <Route
+          path="*"
+          element={<PrivateRoute element={<h1>404 not found</h1>} />}
         />
       </Routes>
     </BrowserRouter>
