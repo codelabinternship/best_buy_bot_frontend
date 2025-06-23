@@ -18,7 +18,7 @@ export const useTelegramRegister = () => {
 
     axiosInstance
       .post("/api/users/telegram-auth/", tgUser)
-      .then((res) => {
+      .then(() => {
         localStorage.setItem("telegram_id", tgUser.telegram_id.toString());
         setUser(tgUser);
       })
