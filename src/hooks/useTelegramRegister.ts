@@ -1,31 +1,33 @@
 import { useEffect, useState } from "react";
-import { getTelegramUser } from "../lib/telegram";
-import axiosInstance from "@/axios/axiosInstance";
+import axios from "../axios/axiosInstance";
+import { getTelegramUser, TelegramUser } from "../lib/telegram";
 
-type TelegramUser = {
-  telegram_id: number;
-  username: string;
-  first_name: string;
-  last_name: string;
-};
+interface UseTelegramRegisterResult {
+  user: TelegramUser | null;
+  fallback: boolean;
+}
 
-export const useTelegramRegister = () => {
+export const useTelegramRegister = (): UseTelegramRegisterResult => {
   const [user, setUser] = useState<TelegramUser | null>(null);
+  const [fallback, setFallback] = useState<boolean>(false);
 
   useEffect(() => {
     const tgUser = getTelegramUser();
-    if (!tgUser) return;
+    if (!tgUser) {
+      setFallback(true);
+      return;
+    }
 
-    axiosInstance
+    axios
       .post("/api/users/telegram-auth/", tgUser)
       .then(() => {
         localStorage.setItem("telegram_id", tgUser.telegram_id.toString());
         setUser(tgUser);
       })
-      .catch((err) => {
-        console.error("Telegram login failed:", err);
+      .catch((error) => {
+        console.error("Telegram login failed", error);
       });
   }, []);
 
-  return user;
+  return { user, fallback };
 };

@@ -1,13 +1,13 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://127.0.0.1:8000",
+  baseURL: "https://your-backend.com", // replace with your backend
 });
 
 axiosInstance.interceptors.request.use((config) => {
-  const telegram_id = localStorage.getItem("telegram_id");
-  if (telegram_id) {
-    config.headers["X-Telegram-ID"] = telegram_id;
+  const telegramId = localStorage.getItem("telegram_id");
+  if (telegramId && config.headers) {
+    config.headers["X-Telegram-ID"] = telegramId;
   }
   return config;
 });
