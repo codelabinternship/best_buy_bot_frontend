@@ -10,6 +10,7 @@ export const useTelegramUser = (): {
 
   useEffect(() => {
     const tgUser = getTelegramUser();
+    console.log(tgUser);
 
     if (!tgUser) {
       setFallback(true);

@@ -1,3 +1,20 @@
+declare global {
+  interface Window {
+    Telegram?: {
+      WebApp?: {
+        initDataUnsafe?: {
+          user?: {
+            id: number;
+            username?: string;
+            first_name?: string;
+            last_name?: string;
+          };
+        };
+      };
+    };
+  }
+}
+
 export interface TelegramUser {
   telegram_id: number;
   username?: string;
@@ -6,7 +23,12 @@ export interface TelegramUser {
 }
 
 export function getTelegramUser(): TelegramUser | null {
-  const user = (window as any)?.Telegram?.WebApp?.initDataUnsafe?.user;
+  const user = window?.Telegram?.WebApp?.initDataUnsafe?.user || {
+    id: 123456,
+    username: "testuser",
+    first_name: "Test",
+    last_name: "User",
+  };
 
   if (!user) {
     console.warn("Not running inside Telegram WebApp or no user found.");

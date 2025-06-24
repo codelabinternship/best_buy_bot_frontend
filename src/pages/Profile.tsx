@@ -1,30 +1,47 @@
 "use client";
-import { useTelegramUser } from "../hooks/useTelegramUser";
+import { useEffect, useState } from "react";
 
-const MarketPage: React.FC = () => {
-  const { user, fallback } = useTelegramUser();
+const Profile: React.FC = () => {
+  const [user, setUser] = useState<any>(null);
+  const [fallback, setFallback] = useState(false);
 
-  if (fallback) {
-    return (
-      <div className="text-center mt-10">
-        <h2 className="text-xl font-bold">⚠️ Please open from Telegram</h2>
-        <p>This app must be opened from a Telegram bot to work.</p>
-      </div>
-    );
-  }
+  useEffect(() => {
+    const telegram = (window as any)?.Telegram;
+    const initDataUnsafe = telegram?.WebApp?.initDataUnsafe;
+
+    console.log("Telegram object:", telegram);
+    console.log("Telegram WebApp:", telegram?.WebApp);
+    console.log("initDataUnsafe:", initDataUnsafe);
+
+    if (!initDataUnsafe || !initDataUnsafe.user) {
+      setFallback(true);
+      console.warn("❌ User not found — WebApp not opened via Telegram");
+    } else {
+      setUser(initDataUnsafe.user);
+      console.log("✅ Telegram user found:", initDataUnsafe.user);
+    }
+  }, []);
 
   return (
     <div className="text-center mt-10">
-      <h1 className="text-2xl font-semibold">🛒 Market</h1>
-      {user ? (
-        <p>
-          Hello {user.first_name} {user.last_name} (@{user.username})
-        </p>
+      <h1 className="text-2xl font-bold">🛒 Telegram Market</h1>
+      {fallback ? (
+        <div className="text-red-500 mt-4">
+          <p>❌ Telegram foydalanuvchisi topilmadi.</p>
+          <p>Iltimos, Telegram ilovasi orqali oching.</p>
+        </div>
+      ) : user ? (
+        <div className="text-green-600 mt-4">
+          <p>
+            ✅ Xush kelibsiz, {user.first_name} @{user.username}
+          </p>
+          <p>Telegram ID: {user.id}</p>
+        </div>
       ) : (
-        <p>Detecting Telegram user...</p>
+        <p>Foydalanuvchini aniqlamoqda...</p>
       )}
     </div>
   );
 };
 
-export default MarketPage;
+export default Profile;
