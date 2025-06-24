@@ -9,9 +9,10 @@ const Profile: React.FC = () => {
     const telegram = (window as any)?.Telegram;
     const initDataUnsafe = telegram?.WebApp?.initDataUnsafe;
 
-    console.log("Telegram object:", telegram);
+    alert(`Telegram object: ${telegram}`);
     console.log("Telegram WebApp:", telegram?.WebApp);
     console.log("initDataUnsafe:", initDataUnsafe);
+    alert(user ? `Hello ${user.first_name}` : "❌ Not running in Telegram");
 
     if (!initDataUnsafe || !initDataUnsafe.user) {
       setFallback(true);
