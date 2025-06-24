@@ -1,4 +1,4 @@
-import { useTelegramRegister } from "../hooks/useTelegramRegister";
+// import { useTelegramRegister } from "../hooks/useTelegramRegister";
 
 const Profile = () => {
   // const { user, fallback } = useTelegramRegister();
