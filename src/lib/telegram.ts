@@ -9,9 +9,7 @@ export function getTelegramUser(): TelegramUser | null {
   const user = (window as any)?.Telegram?.WebApp?.initDataUnsafe?.user;
 
   if (!user) {
-    console.warn(
-      "Telegram user not found. Make sure this is opened via Telegram WebApp."
-    );
+    console.warn("Not running inside Telegram WebApp or no user found.");
     return null;
   }
 
