@@ -30,6 +30,8 @@ export function getTelegramUser(): TelegramUser | null {
     username: "testuser",
     first_name: "Test",
     last_name: "User",
+    photo_url:
+      "https://repository-images.githubusercontent.com/390539692/114987c4-c7de-43ae-bc4e-40b244b87736",
   };
 
   if (!user) {
