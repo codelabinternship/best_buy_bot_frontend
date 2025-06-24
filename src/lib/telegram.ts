@@ -8,6 +8,7 @@ declare global {
             username?: string;
             first_name?: string;
             last_name?: string;
+            photo_url?: string;
           };
         };
       };
@@ -20,6 +21,7 @@ export interface TelegramUser {
   username?: string;
   first_name?: string;
   last_name?: string;
+  photo_url?: string;
 }
 
 export function getTelegramUser(): TelegramUser | null {
@@ -40,5 +42,6 @@ export function getTelegramUser(): TelegramUser | null {
     username: user.username || "",
     first_name: user.first_name || "",
     last_name: user.last_name || "",
+    photo_url: user.photo_url || "",
   };
 }

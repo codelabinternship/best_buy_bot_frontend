@@ -26,14 +26,14 @@ export default function PersonalAccount() {
       {/* Header */}
       <div className="bg-teal-400 ml-4 text-white text-center py-4">
         <h1 className="text-sm mb-1">Личный кабинет</h1>
-        <p>{user.user?.first_name}</p>
+
         <div className="flex items-center gap-3">
           <Avatar className="w-16 h-16 mb-2">
-            <AvatarFallback className="bg-teal-600">U</AvatarFallback>
+            <img src={user.user?.photo_url} alt="" />
           </Avatar>
           <div className="flex flex-col items-baseline">
-            <div className="text-lg font-semibold"></div>
-            <div className="text-sm text-gray-500">+998 77 001 66 66</div>
+            <div className="text-lg font-semibold">{user.user?.first_name}</div>
+            <div className="text-sm text-gray-500">{user.user?.username}</div>
           </div>
         </div>
       </div>
