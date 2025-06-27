@@ -45,7 +45,9 @@ function Home() {
           ))}
         </CarouselContent>
       </Carousel>
-
+      <div className="w-[200px] absolute z-[-10] top-[-80px] h-[190px]  left-[-82px] rounded-full bg-[#DCF5F0]"></div>
+      <div className="w-[200px] absolute z-[-10] bottom-[-80px] h-[190px]  left-[-82px] rounded-full bg-[#DCF5F0]"></div>
+      <div className="w-[280px] absolute z-[-10] bottom-[42%] h-[260px] mt-10 right-[-180px] rounded-full bg-[#DCF5F0]"></div>
       <div className="grid grid-cols-2 gap-10 mt-6 ">
         {isLoading && (
           <div className="flex items-baseline justify-center gap-5">

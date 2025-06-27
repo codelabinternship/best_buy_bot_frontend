@@ -13,7 +13,7 @@ export interface Product {
 }
 
 const fetchProducts = async (): Promise<Product[]> => {
-  const response = await api.get("/api/products/"); // backend API endpoint
+  const response = await api.get("/api/products/");
   return response.data;
 };
 

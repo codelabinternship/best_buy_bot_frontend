@@ -31,8 +31,16 @@ export const useTelegramProfile = (): {
     setUser(tgUser);
     localStorage.setItem("telegram_id", tgUser.telegram_id.toString());
     setLoading(true);
+    const newUser = {
+      telegram_id: tgUser.telegram_id,
+      user_name: tgUser.first_name,
+      email: tgUser.username,
+      role: "Emloyee",
+      address: "tashkent",
+      status: true,
+    };
     axiosInstance
-      .post(`/api/users/telegram-auth/`, user)
+      .post(`/api/users/`, newUser)
       .then((res) => {
         setProfile(res.data);
       })

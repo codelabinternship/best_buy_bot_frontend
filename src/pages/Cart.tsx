@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const initialProducts = [
   {
@@ -46,7 +47,10 @@ const initialProducts = [
 
 export default function CartPage() {
   const [products, setProducts] = useState(initialProducts);
-
+  const navigate = useNavigate();
+  const gotocheckout = () => {
+    navigate("/checkout");
+  };
   const increment = (id: any) => {
     setProducts((prev) =>
       prev.map((p) => (p.id === id ? { ...p, quantity: p.quantity + 1 } : p))
@@ -128,7 +132,10 @@ export default function CartPage() {
           <span className="text-gray-500 text-sm">{totalQuantity} товара</span>
         </div>
 
-        <button className="w-full mb-6 bg-teal-400 text-white rounded-md py-2 mt-4 hover:bg-teal-500 transition">
+        <button
+          onClick={gotocheckout}
+          className="w-full mb-6 bg-teal-400 text-white rounded-md py-2 mt-4 hover:bg-teal-500 transition"
+        >
           Оформить заказ
         </button>
       </div>
